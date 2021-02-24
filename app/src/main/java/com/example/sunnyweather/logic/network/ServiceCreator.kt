@@ -10,6 +10,6 @@ object ServiceCreator {
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    fun <T> create(serviceClass:Class<T>):T  = retrofit.create(serviceClass)
+    fun <T> create(serviceClass:Class<T>):T  = retrofit.create(serviceClass)//serviceClass代理对象来访问api
     inline fun <reified T> create():T = create(T::class.java)
 }
